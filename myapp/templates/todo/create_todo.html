@@ -1,0 +1,20 @@
+{% load static %}
+
+<style>
+    .form-control {
+        width: 30%; /* Adjust the width as needed */
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px; 
+        box-sizing: border-box;
+    }
+    .form{
+        margin-left:10px
+    }
+</style>
+    <form method="POST" action="" class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Save</button>
+    </form> 
