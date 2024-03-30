@@ -1,0 +1,15 @@
+    <h3>Task:</h3>
+    {{Tasks.title}}
+
+    <h3>Description:</h3>
+    {% if description %}
+    {{Tasks.description}}
+    {% else %}
+    No description Provided 
+    {% endif %}
+    <h3>Status:</h3>
+    {% if Tasks.done %}
+    Completed
+    {% else %}
+    In Progress
+    {% endif %}

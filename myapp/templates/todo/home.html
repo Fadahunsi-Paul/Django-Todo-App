@@ -22,7 +22,10 @@
   .card-body{
     margin-right: 200px;
   }
-
+  a{
+    text-decoration: none;
+    
+  }
 </style>
 </head>
 <body>
@@ -55,10 +58,10 @@
                             <tr>
                                 {% if task.done %}
                                 <td scope='row'>{{forloop.counter}}</td>
-                                <td>{{task.title}}</td>
+                                <a href='{% url "todo:todo_details" pk=todo_details.pk %}'><td>{{task.title}}</td></a>
                                 {% else %}
                                 <td scope='row'>{{forloop.counter}}</td>
-                                <td>{{task.title}}</td>
+                                <td><a href='{% url "todo:todo_details" task.pk %}'>{{task.title}}</a></td>
 
                                 <td>
                                     {% if task.done %}
@@ -71,7 +74,7 @@
                                     
                                     {% comment %} <div class="action-btns"> {% endcomment %}
                                         <button type="submit" class="btn btn-danger">&#215;</button>
-                                        <button type="submit" class="btn btn-danger">&#8858;;</button>
+                                        <a href='{% url "todo:todo_details" task.pk %}'><button type="submit" class="btn btn-danger">&#8858;</button></a>
                                         <button type="submit" class="btn btn-success ms-1">&#10003;</button>
                                     {% comment %} </div> {% endcomment %}
                                 </td>
