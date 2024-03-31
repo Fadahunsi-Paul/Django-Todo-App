@@ -1,0 +1,11 @@
+<style>
+    a{
+        text-decoration:none;
+    }
+</style>
+<form method='POST'>
+    {% csrf_token %}
+    <h4>Are You sure You want to delete "{{delete.title}}" ?</h4>
+    <input type='submit' value='Delete'>
+    <a href='{% url "todo:home" %}'><button type="submit" class="btn btn-success ms-1">No</a>
+</form>
