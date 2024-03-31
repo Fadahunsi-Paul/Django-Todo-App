@@ -1,3 +1,5 @@
+{% extends "todo/base.html" %}
+{% block page %}
 <style>
     a{
         text-decoration:none;
@@ -9,3 +11,4 @@
     <input type='submit' value='Delete'>
     <a href='{% url "todo:home" %}'><button type="submit" class="btn btn-success ms-1">No</a>
 </form>
+{% endblock page %}

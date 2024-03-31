@@ -1,21 +1,27 @@
 {% load static %}
 
 <style>
+    body{
+        background-color: rgba(228, 221, 221, 0.993);
+        padding-top: 50px;
+    }
+    form{
+        height:500px;
+        max-width: 590px;
+        margin: auto;
+        background-color: whitesmoke;
+        
+    }
     .form-control {
-        width: 30%; /* Adjust the width as needed */
+        width: 70%; /* Adjust the width as needed */
         padding: 10px;
-        margin-bottom: 15px;
+        margin-top: 50px;
         border: 1px solid #ccc;
         border-radius: 5px; 
         box-sizing: border-box;
     }
-    .form{
-        margin-left:10px
-        
-    }
-    .form-container{
-        margin-left:59px;
-    }
+    
+    
 </style>
 <a href='{% url "todo:home" %}'>Back</a>
 <div class='form-container'>

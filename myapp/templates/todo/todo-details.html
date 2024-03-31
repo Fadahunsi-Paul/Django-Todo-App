@@ -1,4 +1,7 @@
-    <h3>Task:</h3>
+{% extends "todo/base.html" %}
+{% block page %}
+
+<h3>Task:</h3>
     {{Tasks.title}}
 
     <h3>Description:</h3>
@@ -14,3 +17,4 @@
     {% else %}
         In Progress
     {% endif %}
+{% endblock page %}
