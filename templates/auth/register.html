@@ -1,0 +1,15 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert-{{messages.tags}}">
+            <h5 style="color:green;">{{message}}</h5>
+        </div>
+    {% endfor %}
+{% endif %}
+<div class='form-container'>
+    <form method="POST" action="" class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+    </form> 
+    <p>Already have an account? <a href="{% url 'accounts:login' %}">Login</a></P>
+</div>

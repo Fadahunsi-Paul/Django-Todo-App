@@ -36,11 +36,12 @@
             <div class="col col-lg-9 col-xl-7">
                 <div class="card rounded-3 main" >
                 <div class="card-body p-4 main">
-                  {% if request.user.is_authenticated %}
-                  <p>Hello User</p>
-                  <a href="{% url 'todo:logout' %}">Logout</a>
+                  {% if user.is_authenticated %}
+                    <p>Hello User</p> 
+                    <a href="{% url 'accounts:register' %}">Logout</a>
                   {% else %}
-                  <a href="{% url 'todo:login' %}">Login</a>
+                    <a href="{% url 'accounts:login' %}">Login</a>
+                    <a href="{% url 'accounts:register' %}">Register</a>
                   {% endif %}
                     <h4 class="text-center my-3 pb-3">TODO LIST APP</h4>
                     <form action="" method="get" class="search-form">

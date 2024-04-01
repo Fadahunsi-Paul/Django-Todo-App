@@ -4,7 +4,7 @@ from django.forms import ModelForm
 
 class RegisterForm(forms.ModelForm):
     username = forms.CharField(required=True,
-    widget = forms.Textinput(
+    widget = forms.TextInput(
         attrs={
             'placeholder':'Enter Username',
             'class':'form-control'
@@ -12,7 +12,7 @@ class RegisterForm(forms.ModelForm):
     )) 
 
     email=forms.EmailField(required=True,
-    widget = forms.Textinput(
+    widget = forms.TextInput(
         attrs={
             'placeholder':'Enter Email',
             'class':'form-control'
@@ -20,22 +20,20 @@ class RegisterForm(forms.ModelForm):
     ))
 
     password=forms.CharField(required=True,
-    widget = forms.Textinput(
+    widget = forms.TextInput(
         attrs={
             'placeholder':'Enter Password',
             'class':'form-control'
         }
-    )
-    )
+    ))
 
-    comfirm_password=forms.CharField(required=True,
-    widget = forms.Textinput(
+    confirm_password=forms.CharField(required=True,
+    widget = forms.TextInput(
         attrs={
             'placeholder':'Re-enter Password',
             'class':'form-control'
         }
-    )
-    )
+    ))
     class Meta:
         model= User
         fields=['username','email','password']
@@ -43,19 +41,24 @@ class RegisterForm(forms.ModelForm):
 
 class LoginForm(forms.ModelForm):
     email=forms.EmailField(required=True,
-    widget = forms.Textinput(
+    widget = forms.TextInput(
         attrs= {
             'placeholder':'Enter Email',
             'class':'form-control'
         }
     ))
 
-    password=forms.Charfield(
+    password=forms.CharField(
         required=True,
-        widget=forms.Textinput(
+        widget=forms.TextInput(
             attrs={
                 'placeholder':'Enter Password',
                 'class':'form-control'
             }
         )
     )
+
+    
+    class Meta:
+        model= User
+        fields=['email','password']
