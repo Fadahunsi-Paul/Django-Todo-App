@@ -62,18 +62,17 @@ def login_view(request):
     if request.method =='POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            email=form.cleaned_data['email'],
+            email=form.cleaned_data['email']
             password=form.cleaned_data['password']
-            user = authenticate( email=email, password=password)
-            if user is not None and user.is_active:
-
-                login(request,user)
+            user = authenticate(request, email=email, password=password)
+            if user:
+                login(request, user)
                 user.save()
                 messages.success(request, _( "You have logged in Successfully!"))
                 return redirect(reverse('todo:home'))
             else:
-                messages.info(request, _("Invalid Email or Password Provided"))
-        form=LoginForm()
+                messages.error(request, _("Invalid Email or Password Provided"))
+        form=LoginForm(request.POST)
     return render(request,'auth/login.html',{'form':form})
 
 
